@@ -1,0 +1,68 @@
+﻿@model TheRealManSys.ViewModels.RequestViewModel
+@{
+    <div class="container-lg">
+        <a asp-controller="Request" asp-action="CreateRequestGet" class="text-dark">Create request</a>
+
+        <hr />
+
+        <div class="container p-4 border">
+            <div class="row p-0">
+                <div class="col-1 p-2 border">
+                    <span class="text-dark">Номер</span>
+                </div>
+                <div class="col-4 border p-2"><span class="">Создатель</span></div>
+                <div class="col-4 border p-2">
+                    <span class=""> Статус </span>
+                </div>
+                <div class="col-2 border"></div>
+                <div class="col-1 border"></div>
+            </div>
+
+            @if(Model.requestsForView != null)
+            {
+                @foreach(Request request in Model.requestsForView)
+                {
+                    <div class="row p-0">
+                            <div class="col-1 p-1 border">
+                                <span class="text-muted">#</span>
+                                <label asp-for="@Model.input.id" class="text-muted">@request.Id</label>
+                            </div>
+                            <div class="col-4 border p-1">@request.Creator.Name @request.Creator.Surname</div>
+                            <div class="col-4 border p-1">
+                                @if (request.GeneralStatus != null && !string.IsNullOrEmpty(request.GeneralStatus.Name))
+                                {
+                                        <span> @request.GeneralStatus.Name </span>
+                                }
+                            </div>
+                            <div class="col-2 border">
+                                @Html.ActionLink("Редактировать", "EditRequest", new{Id = request.Id}, new{ @class = "btn"})
+                            </div>
+                            <div class="col-1 border">
+                                <button class="btn p-1" type="button" data-bs-toggle="collapse" data-bs-target="#Request-@request.Id" aria-expanded="false" aria-controls="Request-@request.Id">Раскрыть</button>
+                            </div>
+                        <div class="collapse border-top" id="Request-@request.Id">
+                            <div class="container bg-light m-3 border p-3" style="max-width:inherit; min-width:min-content; width:98%">
+                                <div action="container">
+                                    <div class="row">
+                                        <div class="col-4 border p-2"><span class="text-dark p-1">Наименование</span></div>
+                                        <div class="col-2 border p-2"><span class="text-dark p-2">Количество</span></div>
+                                        <div class="col-3 border  p-2"><span class="text-dark p-2">Статус</span></div>
+                                    </div>
+                                    @foreach (Item item in request.Items)
+                                    {
+                                        <div class="row ">
+                                            <div class="col-4 border p-2"><span class="text-dark p-1">@item.Name</span></div>
+                                            <div class="col-2 border p-2"><span class="text-dark p-1">@item.Count @item.Type</span></div>
+                                            <div class="col-3 border p-2"></div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+}

@@ -1,0 +1,58 @@
+﻿@model TheRealManSys.ViewModels.CreateRequestViewModel
+
+<form class="input-group d-flex flex-column" action="" method="post">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-auto">
+                #
+            </div>
+            <div class="col-5">
+                Наименование
+            </div>
+            <div class="col-1">
+                Количество
+            </div>
+            <div class="col-5">
+                Количественный тип
+            </div>
+        </div>
+    </div>
+    <hr />
+    @for (int index = 0; index < Model.Items.Count; index++)
+    {
+        var number = index + 1;
+            <div class="row">
+                <div class="col-auto">
+                    <label class="form-label w-100">@number</label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="@Model.Items[index].Name" value="@Model.Items[index].Name" class="form-control w-100" />
+                </div>
+                <div class="col-1">
+                    <input asp-for="@Model.Items[index].Count" value="@Model.Items[index].Count" class="form-control w-100" />
+                </div>
+                <div class="col-5">
+                    <select asp-for="@Model.Items[index].Type" class="form-select w-100">
+                        <option selected>@Model.Items[index].Type</option>
+                        <option>Штук</option>
+                        <option>Литров</option>
+                        <option>Килограмм</option>
+                        <option>Грамм</option>
+                        <option>Упаковок</option>
+                    </select>
+                </div>
+            </div>
+            <hr />
+    }
+
+    <div class="d-inline-flex">
+        <div class="m-2">
+            <input class="btn btn-outline-primary" type="submit" asp-controller="Request" asp-action="AddItem" value="Добавить" />
+        </div>
+
+        <div class="m-2">
+            <input class="btn btn-outline-primary" type="submit" asp-controller="Request" asp-action="CreateRequestPost" value="Отправить" />
+        </div>
+    </div>
+</form>

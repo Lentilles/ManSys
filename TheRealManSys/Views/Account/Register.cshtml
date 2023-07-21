@@ -1,0 +1,55 @@
+﻿@model TheRealManSys.ViewModels.RegisterViewModel
+<h2>Регистрация нового пользователя</h2>
+<form method="post" asp-controller="Account" asp-action="Register">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label asp-for="Input.Email"></label><br />
+        <input asp-for="Input.Email" />
+        <span asp-validation-for="Input.Email"></span>
+    </div>
+    <div>
+        <label asp-for="Input.SurName"></label><br />
+        <input asp-for="Input.SurName" />
+        <span asp-validation-for="Input.SurName"></span>
+    </div>
+    <div>
+        <label asp-for="Input.Name"></label><br />
+        <input asp-for="Input.Name" />
+        <span asp-validation-for="Input.Name"></span>
+    </div>
+    <div>
+        <label asp-for="Input.PhoneNumber"></label><br />
+        <input id="inputPhone" asp-for="Input.PhoneNumber" />
+        <span asp-validation-for="Input.PhoneNumber"></span>
+    </div>
+    <div>
+        <label asp-for="Input.Password"></label><br />
+        <input asp-for="Input.Password" />
+        <span asp-validation-for="Input.Password"></span>
+    </div>
+    <br />
+    <hr />
+    <div>
+        <input type="submit" value="Зарегистрироваться" />
+    </div>
+</form>
+<script>
+    let inputPhone = document.getElementById("inputPhone");
+    inputPhone.oninput = () => phoneMask(inputPhone)
+    function phoneMask(inputEl) {
+        let patStringArr = "+7(___)___-__-__".split('');
+        let arrPush = [3, 4, 5, 7, 8, 9, 11, 12, 14, 15]
+        let val = inputEl.value;
+        let arr = val.replace(/\D+/g, "").split('').splice(1);
+        let n;
+        let ni;
+        arr.forEach((s, i) => {
+            n = arrPush[i];
+            patStringArr[n] = s
+            ni = i
+        });
+        arr.length < 10 ? inputEl.style.color = 'red' : inputEl.style.color = 'green';
+        inputEl.value = patStringArr.join('');
+        n ? inputEl.setSelectionRange(n + 1, n + 1) : inputEl.setSelectionRange(17, 17)
+    }
+</script>
