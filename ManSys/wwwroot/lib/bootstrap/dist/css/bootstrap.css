@@ -4106,6 +4106,10 @@ textarea.form-control-lg {
     padding: 0;
     overflow-y: visible;
   }
+
+    .nav-item:last-of-type {
+        margin-left: auto;
+    }
 }
 @media (min-width: 768px) {
   .navbar-expand-md {
