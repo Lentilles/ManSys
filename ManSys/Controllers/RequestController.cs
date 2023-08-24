@@ -134,8 +134,8 @@ namespace ManSys.Controllers
 
             var request = _requestDb.request.Where(x => x.Id == model.request.Id).FirstOrDefault();
 
-            request.DeliveryDateStart = new DateTime(int.Parse(startDate[2]), int.Parse(startDate[1]), int.Parse(startDate[0])).ToUniversalTime();
-            request.DeliveryDateEnd = new DateTime(int.Parse(endDate[2]), int.Parse(endDate[1]), int.Parse(endDate[0])).ToUniversalTime();
+            request.DeliveryDateStart = new DateTime(int.Parse(startDate[2]), int.Parse(startDate[1]), int.Parse(startDate[0]), 0, 0, 0, DateTimeKind.Utc);
+            request.DeliveryDateEnd = new DateTime(int.Parse(endDate[2]), int.Parse(endDate[1]), int.Parse(endDate[0]), 0, 0, 0, DateTimeKind.Utc);
 
             
             _requestDb.request.Update(request);
