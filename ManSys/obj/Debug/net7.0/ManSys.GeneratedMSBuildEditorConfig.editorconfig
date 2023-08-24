@@ -16,8 +16,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Projects\.NET\ManSys\ManSys
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Account/Account.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2NvdW50LmNzaHRtbA==
+[D:/Projects/.NET/ManSys/ManSys/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projects/.NET/ManSys/ManSys/Views/Account/Login.cshtml]
