@@ -1,10 +1,11 @@
 ﻿@model ManSys.ViewModels.Request.EditRequestViewModel
 
+
 <form method="post">
     <div class="container p-0">
         <div class="input-group w-25">
-            <input asp-for="@Model.request.CodeName" class="text-dark form-control w-75" placeholder="Кодовое наименование" value="@Model.request.CodeName" />
-            <input asp-for="@Model.request.Id" class="text-muted input-group-text w-25" type="text" value="@Model.request.Id" readonly></input>
+            <input asp-for="@Model.request.CodeName" class="text-dark form-control w-75 rounded-0" placeholder="Кодовое наименование" value="@Model.request.CodeName" />
+            <input asp-for="@Model.request.Id" class="text-muted input-group-text w-25 rounded-0" type="text" value="@Model.request.Id" readonly></input>
         </div>
     </div>
 
@@ -18,7 +19,7 @@
                 {
                     var number = i + 1;
                     <div class="input-group d-inline-flex">
-                        <label class="input-group-text">@number</label>
+                        <label class="input-group-text rounded-0">@number</label>
                         <input asp-for="@Model.request.Items[i].Name" value="@Model.request.Items[i].Name" class="form-control"/>
                         <input asp-for="@Model.request.Items[i].Count" value="@Model.request.Items[i].Count" class="form-control" />
                         <select asp-for="@Model.request.Items[i].Type" class="form-select">
@@ -29,6 +30,9 @@
                             <option>Грамм</option>
                             <option>Упаковок</option>
                         </select>
+                        <button type="submit" class="btn btn-danger rounded-0" asp-action="DeleteItem">
+                            <i class="bi bi-trash3-fill"></i>
+                        </button>
                     </div>
                 }
         </div>
@@ -37,14 +41,13 @@
         </div>
     </div>
     <div class="container d-inline-flex">
-
-    <div class="container p-0 m-2">
-        <span class="text-black">Срок поставки</span>
-        <hr class="mt-0"/>
-        <input type="text" name="DeliveryDateRange" value="@Model.DeliveryDateRange" class="form-control" />
-    </div>
         <div class="container p-0 m-2">
-            <span class="text-black">Дата и время доставки</span>
+            <span class="text-black">Срок поставки</span>
+            <hr class="mt-0"/>
+            <input type="text" name="DeliveryDateRange" value="@Model.DeliveryDateRange" class="form-control" />
+        </div>
+        <div class="container p-0 m-2">
+            <span class="text-black">Дата доставки</span>
             <hr class="mt-0" />
             <input type="text" name="DeliveryDateTime" class="form-control" />
         </div>
