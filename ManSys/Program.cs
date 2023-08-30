@@ -2,6 +2,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ManSys.Data;
 using ManSys.Models;
+using ManSys.Data.RequestScripts;
+using ManSys.Data.CommentScripts;
+using ManSys.Data.ItemScripts;
+using ManSys.Data.StatusScripts;
 
 var builder = WebApplication.CreateBuilder(args);
 var DbConnectionString = builder.Configuration.GetConnectionString("Default") ?? throw new InvalidOperationException("Connection string 'Identity' not found.");
@@ -46,7 +50,10 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 
-
+builder.Services.AddScoped<RequestManager>();
+builder.Services.AddScoped<CommentManager>();
+builder.Services.AddScoped<ItemManager>();
+builder.Services.AddScoped<StatusManager>();
 
 var app = builder.Build();
 

@@ -21,17 +21,15 @@ namespace ManSys.Controllers
         private readonly RequestManager? _requestManager;
         private readonly ItemManager? _itemManager;
         private readonly CommentManager? _commentManager;
-        private readonly DraftManager? _draftManager;
         private readonly UserManager<User> _userManager;
 
-        public RequestController(UserManager<User> userManager, ManSysRequestContext requestDb)
+        public RequestController(ManSysRequestContext requestDb, RequestManager? requestManager, ItemManager? itemManager, CommentManager? commentManager,  UserManager<User> userManager)
         {
-            _userManager = userManager;
             _requestDb = requestDb;
-            _requestManager = new RequestManager(requestDb);
-            _itemManager = new ItemManager(requestDb);
-            _commentManager = new CommentManager(requestDb);
-            //_draftManager = new DraftManager(requestDb);
+            _requestManager = requestManager;
+            _itemManager = itemManager;
+            _commentManager = commentManager;
+            _userManager = userManager;
         }
 
         [HttpGet]
@@ -39,9 +37,10 @@ namespace ManSys.Controllers
         {
             RequestViewModel model = new RequestViewModel();
 
-            model.requestsForView = _requestDb.request.Include(x=> x.Creator)
-                                                        .Include(x=> x.GeneralStatus)
-                                                        .Include(x=> x.Items).ToList();
+            model.requestsForView = 
+                _requestDb.request.Include(x=> x.Creator)
+                    .Include(x=> x.GeneralStatus)
+                        .Include(x=> x.Items).ToList();
 
             return View(model);
         }
