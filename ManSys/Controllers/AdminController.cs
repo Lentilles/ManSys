@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using ManSys.Data;
 using ManSys.Models;
-using ManSys.ViewModels;
+using ManSys.ViewModels.Admin;
 using ManSys.Data.StatusScripts;
 using Microsoft.EntityFrameworkCore;
 

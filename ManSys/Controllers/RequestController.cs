@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using System.Text.RegularExpressions;
 using ManSys.Data;
@@ -12,6 +11,7 @@ using ManSys.Models;
 using ManSys.Models.Requests;
 using ManSys.ViewModels;
 using ManSys.ViewModels.Request;
+using Microsoft.EntityFrameworkCore;
 
 namespace ManSys.Controllers
 {

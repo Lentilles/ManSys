@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Marve\\source\\repos\\ManSysLast\\ASP-Learning\\ManSys\\ManSys.csproj": {}
+    "D:\\Projects\\.NET\\ManSys\\ManSys\\ManSys.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Marve\\source\\repos\\ManSysLast\\ASP-Learning\\ManSys\\ManSys.csproj": {
+    "D:\\Projects\\.NET\\ManSys\\ManSys\\ManSys.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marve\\source\\repos\\ManSysLast\\ASP-Learning\\ManSys\\ManSys.csproj",
+        "projectUniqueName": "D:\\Projects\\.NET\\ManSys\\ManSys\\ManSys.csproj",
         "projectName": "ManSys",
-        "projectPath": "C:\\Users\\Marve\\source\\repos\\ManSysLast\\ASP-Learning\\ManSys\\ManSys.csproj",
-        "packagesPath": "C:\\Users\\Marve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marve\\source\\repos\\ManSysLast\\ASP-Learning\\ManSys\\obj\\",
+        "projectPath": "D:\\Projects\\.NET\\ManSys\\ManSys\\ManSys.csproj",
+        "packagesPath": "C:\\Users\\Lentilles\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\.NET\\ManSys\\ManSys\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Program Files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Marve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lentilles\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -27,6 +27,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -50,6 +51,16 @@
               "version": "[7.0.10, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.10, )"
             },
@@ -87,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }
