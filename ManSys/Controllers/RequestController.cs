@@ -153,5 +153,27 @@ namespace ManSys.Controllers
 
             return CreateRequestGet(model);
         }
+
+        [HttpGet]
+        public ActionResult DeleteItem(int id, int requestId)
+        {
+            Request request = _requestDb.request.Where(x => x.Id == requestId).First();
+            request.Items = _requestDb.items.Where(x => x.RequestId == requestId).ToList();
+
+            request.Items.Remove(request.Items[id]);
+
+            _requestDb.SaveChanges();
+
+            return RedirectToAction("EditRequest", new { id = requestId });
+        }
+
+        [HttpPost]
+        public ActionResult OnEditAddItem(EditRequestViewModel model) 
+        {
+            model.request.Items.Add(model.newItem);
+
+            return RedirectToAction("EditRequest", model.request.Id);
+        }
     } 
 }
+ 

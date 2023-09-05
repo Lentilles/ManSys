@@ -30,23 +30,39 @@
                             <option>Грамм</option>
                             <option>Упаковок</option>
                         </select>
-                        <button type="submit" class="btn btn-danger rounded-0" asp-action="DeleteItem">
+                        <a href="@Url.Action("DeleteItem", new{id = i, requestId = Model.request.Id})" class="btn btn-danger rounded-0">
                             <i class="bi bi-trash3-fill"></i> Удалить
-                        </button>
+                        </a>
                     </div>
                 }
+                <div class="mt-2">Добавить позицию</div>
+                <hr />
+                <div class="input-group d-inline-flex">
+                    <label class="input-group-text rounded-0"> - </label>
+                    <input asp-for="@Model.newItem.Name" placeholder="Наименование" class="form-control" />
+                    <input asp-for="@Model.newItem.Count" value="1" type="number" min="1" class="form-control" />
+                    <select asp-for="@Model.newItem.Type" class="form-select rounded-0">
+                        <option selected>Штук</option>
+                        <option>Литров</option>
+                        <option>Килограмм</option>
+                        <option>Грамм</option>
+                        <option>Упаковок</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary rounded-0" onclick="location.href='@Url.Action("OnEditAddItem")'"><i class="bi bi-plus-square-fill"></i> Добавить</button>
+                 </div>
         </div>
+        
         <div class="container">
 
         </div>
     </div>
     <div class="container d-inline-flex">
-        <div class="container p-0 m-2">
+        <div class="w-50 p-0 m-1">
             <span class="text-black">Срок поставки</span>
             <hr class="mt-0"/>
             <input type="text" name="DeliveryDateRange" value="@Model.DeliveryDateRange" class="form-control rounded-0" />
         </div>
-        <div class="container p-0 m-2">
+        <div class="w-50 p-0 m-1">
             <span class="text-black">Дата доставки</span>
             <hr class="mt-0" />
             <input type="text" name="DeliveryDateTime" class="form-control rounded-0" />

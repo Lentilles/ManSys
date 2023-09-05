@@ -8,6 +8,7 @@ namespace ManSys.ViewModels.Request
         public List<Status> statuses { get; set; }
         public Comment comment { get; set; }
         public List<User> users { get; set; }
+        public Item newItem { get; set; }
         public string DeliveryDateRange { get; set; }
     }
 }
