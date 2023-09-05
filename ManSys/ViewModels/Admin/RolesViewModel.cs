@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using ManSys.Models;
 
-namespace ManSys.ViewModels
+namespace ManSys.ViewModels.Admin
 {
     public class RolesViewModel
     {

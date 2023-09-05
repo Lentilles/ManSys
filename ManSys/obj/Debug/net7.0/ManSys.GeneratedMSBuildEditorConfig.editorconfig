@@ -9,81 +9,85 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ManSys
 build_property.RootNamespace = ManSys
-build_property.ProjectDir = D:\Projects\.NET\ManSys\ManSys\
+build_property.ProjectDir = c:\Users\Marve\source\repos\ManSysLast\ASP-Learning\ManSys\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Projects\.NET\ManSys\ManSys
+build_property.MSBuildProjectDirectory = c:\Users\Marve\source\repos\ManSysLast\ASP-Learning\ManSys
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Account/Index.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Account/Login.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Account/Register.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Admin/Index.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Admin/ManageRoles.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Admin/ManageRoles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlUm9sZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Admin/ManageStatuses.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Admin/ManageStatuses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlU3RhdHVzZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Home/Index.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Admin/ManageUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Home/Privacy.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Request/CreateContacts.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Request/CreateContacts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxDcmVhdGVDb250YWN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Request/CreateRequest.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Request/CreateRequest.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxDcmVhdGVSZXF1ZXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Request/EditRequest.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Request/EditRequest.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxFZGl0UmVxdWVzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Request/Index.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Request/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Request/Request.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Request/Request.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxSZXF1ZXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Shared/Error.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/_ViewImports.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/_ViewStart.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/ManSys/ManSys/Views/Shared/_Layout.cshtml]
+[c:/Users/Marve/source/repos/ManSysLast/ASP-Learning/ManSys/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-gkmhvjgiii
