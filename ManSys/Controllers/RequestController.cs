@@ -147,7 +147,7 @@ namespace ManSys.Controllers
 
 
         [HttpPost]
-        public ActionResult AddItem(CreateRequestViewModel model)
+        public ActionResult OnCreateAddItem(CreateRequestViewModel model)
         {
             model.Items.Add(new Item());
 
@@ -158,7 +158,7 @@ namespace ManSys.Controllers
         public ActionResult DeleteItem(int id, int requestId)
         {
             Request request = _requestDb.request.Where(x => x.Id == requestId).First();
-            request.Items = _requestDb.items.Where(x => x.RequestId == requestId).ToList();
+            //request.Items = _requestDb.items.Where(x => x.RequestId == requestId).ToList();
 
             request.Items.Remove(request.Items[id]);
 
@@ -170,9 +170,18 @@ namespace ManSys.Controllers
         [HttpPost]
         public ActionResult OnEditAddItem(EditRequestViewModel model) 
         {
-            model.request.Items.Add(model.newItem);
 
             return RedirectToAction("EditRequest", model.request.Id);
+        }
+
+        [HttpGet]
+        public ActionResult DeleteRequest(int id)
+        {
+            _requestDb.request.Remove(_requestDb.request.Where(_x => _x.Id == id).First());
+
+            _requestDb.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     } 
 }
