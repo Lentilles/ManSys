@@ -7,8 +7,9 @@
             {
                 <form method="" action="">
                     <div class="input-group mb-3">
-                    <input asp-for="input.Role.Name" class="form-control m-1 rounded-0" value="@role.Name" />
-                    <input formaction="DeleteRole" formmethod="post" class="btn btn-outline-danger m-1 rounded-0" type="submit" value="Удалить роль" />
+                        <input asp-for="input.Role.Name" class="form-control m-1 rounded-0" value="@role.Name" />
+                        <input formaction="DeleteRole" formmethod="post" class="btn btn-outline-danger m-1 rounded-0" type="submit" value="Удалить роль" />
+                        <input formaction="EditPermissions" formmethod="post" class="btn btn-outline-success m-1 rounded-0" type="submit" value="Редактировать привелегии" />
                     </div>
                 </form>
             }

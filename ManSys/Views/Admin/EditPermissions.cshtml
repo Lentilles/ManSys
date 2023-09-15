@@ -1,0 +1,21 @@
+﻿@model ManSys.ViewModels.Admin.RolePermissions
+
+@{
+    string[] Labels = {"Создать запрос", "Изменить запрос", "Удалить запрос", "Изменить статус", "Комментировать", "Назначить менеджера", "Указать доставку" };
+    var values = (int[])Enum.GetValues(typeof(RequestPermissions));
+    
+}
+
+<h3>EditPermissions</h3>
+
+<div class="container bg-light">
+    <form>
+        <div>
+            @for (int i = 0; i < values.Length; i++)
+            {
+                <label>@Labels[i]</label>
+                <input asp-for="role" type="checkbox" value="@values[i]"/>
+            }
+        </div>
+    </form>
+</div>
