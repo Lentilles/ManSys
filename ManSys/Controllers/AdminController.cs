@@ -103,5 +103,42 @@ namespace ManSys.Controllers
             return RedirectToAction("ManageRoles", "Admin");
         }
 
+
+
+        [HttpPost]
+        public ActionResult EditPermissions(RolesViewModel RoleViewModel)
+        {
+            RolePermissions model = new RolePermissions();
+            model.role = context.Roles.ToList().Where(x => x.Name == RoleViewModel.input.Role.Name).First();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult SavePermissions(RolePermissions model)
+        {
+            model.role = context.Roles.ToList().Where(x=>x.Name == model.role.Name).First();
+
+            int requestPermissionsTotal = 0;
+            foreach (var value in model.requestPermissions)
+            {
+                if(int.TryParse(value, out var result))
+                {
+                    requestPermissionsTotal += result;
+                }
+                else
+                {
+                    Console.Error.WriteLine(value + "wrong value on saving request permissions");
+                }
+            }
+
+            if((int)model.role.requestPermissions != requestPermissionsTotal)
+            {
+                model.role.requestPermissions = (RequestPermissions)requestPermissionsTotal;
+                context.Roles.Update(model.role);
+                context.SaveChanges();
+            }
+
+            return RedirectToAction(nameof(ManageRoles));
+        }
     }
 }

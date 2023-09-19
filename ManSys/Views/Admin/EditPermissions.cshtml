@@ -1,21 +1,30 @@
 ﻿@model ManSys.ViewModels.Admin.RolePermissions
 
 @{
-    string[] Labels = {"Создать запрос", "Изменить запрос", "Удалить запрос", "Изменить статус", "Комментировать", "Назначить менеджера", "Указать доставку" };
+    string[] Labels = {"Создать запрос", "Изменить запрос", "Удалить запрос", "Изменить статус", "Комментировать", "Назначить ответственного", "Указать доставку" };
     var values = (int[])Enum.GetValues(typeof(RequestPermissions));
-    
 }
 
-<h3>EditPermissions</h3>
 
-<div class="container bg-light">
-    <form>
-        <div>
-            @for (int i = 0; i < values.Length; i++)
-            {
-                <label>@Labels[i]</label>
-                <input asp-for="role" type="checkbox" value="@values[i]"/>
-            }
+<form>
+    <h3>Привелегии для роли <input type="text" asp-for="@Model.role.Name" value="@Model.role.Name" readonly /></h3>
+
+<hr class="mt-0"/>
+    <div class="bg-light">
+        <div class="container d-flex flex-row">
+            <div class="d-flex flex-column m-2">
+
+                @for (int i = 1; i < values.Length; i++)
+                {
+                    <div class="form-check">
+                        <label class="form-check-label">@Labels[i-1]</label>
+                        <input class="form-check-input" asp-for="@Model.requestPermissions[i-1]" type="checkbox" value="@values[i]"/>
+                    </div>
+                }
+            </div> 
+            <div class="d-flex flex-column m-2"></div>
+            <div class="d-flex flex-column m-2"></div>
         </div>
-    </form>
-</div>
+    </div>
+    <input type="submit" class="btn btn-outline-primary mt-3" asp-action="SavePermissions" formmethod="post"/>
+</form>

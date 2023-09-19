@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace ManSys.Models
 {
@@ -21,13 +22,21 @@ namespace ManSys.Models
     [Flags]
     public enum RequestPermissions
     {
+        [Display(Name = "Нет прав для работы с заявками")]
         None = 0,
+        [Display(Name = "Создавать запросы")]
         CreateRequest = 1,
+        [Display(Name = "Обновлять запросы")]
         UpdateRequest = 2,
+        [Display(Name = "Удалять запросы")]
         DeleteRequest = 4,
+        [Display(Name = "Изменять статус")]
         ChangeStatus = 8,
+        [Display(Name = "Писать комментарии")]
         WriteComment = 16,
+        [Display(Name = "Назначать ответственного")]
         AssignManager = 32,
+        [Display(Name = "Назначать доставку")]
         AssignDelivery = 64,
     }
 }
