@@ -12,6 +12,7 @@ using ManSys.Models.Requests;
 using ManSys.ViewModels;
 using ManSys.ViewModels.Request;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ManSys.Controllers
 {
@@ -22,14 +23,16 @@ namespace ManSys.Controllers
         private readonly ItemManager? _itemManager;
         private readonly CommentManager? _commentManager;
         private readonly UserManager<User> _userManager;
+        private readonly RoleManager<Role> _roleManager;
 
-        public RequestController(ManSysRequestContext requestDb, RequestManager? requestManager, ItemManager? itemManager, CommentManager? commentManager,  UserManager<User> userManager)
+        public RequestController(ManSysRequestContext requestDb, RequestManager? requestManager, ItemManager? itemManager, CommentManager? commentManager,  UserManager<User> userManager, RoleManager<Role> roleManager)
         {
             _requestDb = requestDb;
             _requestManager = requestManager;
             _itemManager = itemManager;
             _commentManager = commentManager;
             _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         [HttpGet]
@@ -49,12 +52,15 @@ namespace ManSys.Controllers
 
 
         [HttpGet]
+        [Authorize(Policy = "CreateRequest")]
         public ActionResult CreateRequestGet(CreateRequestViewModel model)
        {
             if(model.Items == null)
             {
-                model.Items = new List<Item>();
-                model.Items.Add(new Item());
+                model.Items = new List<Item>
+                {
+                    new Item()
+                };
             }
 
             return View("CreateRequest", model);

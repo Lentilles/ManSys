@@ -6,6 +6,9 @@ using ManSys.Data.RequestScripts;
 using ManSys.Data.CommentScripts;
 using ManSys.Data.ItemScripts;
 using ManSys.Data.StatusScripts;
+using Microsoft.AspNetCore.Authorization;
+using ManSys.Policies;
+using ManSys;
 
 var builder = WebApplication.CreateBuilder(args);
 var DbConnectionString = builder.Configuration.GetConnectionString("Default") ?? throw new InvalidOperationException("Connection string 'Identity' not found.");
@@ -54,6 +57,16 @@ builder.Services.AddScoped<RequestManager>();
 builder.Services.AddScoped<CommentManager>();
 builder.Services.AddScoped<ItemManager>();
 builder.Services.AddScoped<StatusManager>();
+
+builder.Services.AddScoped<IAuthorizationHandler, RequestPermissionHandler>();
+
+builder.Services.AddAuthorization(x =>
+{
+    x.AddPolicy("CreateRequest", policy =>
+    {
+        policy.Requirements.Add(new PermissionsRequirement(RequestPermissions.CreateRequest));
+    });
+});
 
 var app = builder.Build();
 

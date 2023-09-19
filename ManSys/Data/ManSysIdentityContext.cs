@@ -9,6 +9,9 @@ public class ManSysIdentityContext : IdentityDbContext<User, Role, string>
 {   
     public ManSysIdentityContext(DbContextOptions<ManSysIdentityContext> options) : base(options)
     {
+    }    
+    public ManSysIdentityContext() : base()
+    {
     }
 
     protected override void OnModelCreating(ModelBuilder builder)
