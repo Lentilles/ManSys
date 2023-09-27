@@ -150,5 +150,17 @@ namespace ManSys.Controllers
 
             return View(model);
         }
+
+        [HttpPost]
+        public ActionResult SaveUsers(ManageUsersViewModel model)
+        {
+            //foreach(var id in model.IdsForChange)
+            //{
+            //    context.Users.Where(x => x.Id == id).First().EmailConfirmed = !context.Users.Where(x => x.Id == id).First().EmailConfirmed;
+            //}
+            //context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }
