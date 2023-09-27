@@ -17,7 +17,7 @@
                     <input asp-for="@Model.Statuses[i].Name" class="form-control m-1 w-100" value="@Model.Statuses[i].Name" />
                 </div>
                 <div class="col-1 col-sm-1">
-                    <input asp-for="@Model.Statuses[i].Color" type="color" value="@Model.Statuses[i].HexedColor" class="form-control-color m-1" />
+                    <input asp-for="@Model.Statuses[i].Color" type="color" value="@Model.Statuses[i].HexedColor" class="form-control-color m-1 border-0 bg-white" />
                 </div>
                 <div class="col-2">
                     <select asp-for="@Model.Statuses[i].GlobalStatus" class="form-select m-1 w-100">
@@ -48,7 +48,7 @@
                 <input asp-for="@Model.Input.Name" class="form-control m-1 w-100" placeholder="Название статуса" />
             </div>
             <div class="col-1 col-sm-1">
-                <input asp-for="@Model.Input.Color" type="color" value="#FF0000" class="form-control-color m-1" />
+                <input asp-for="@Model.Input.Color" type="color" value="#FF0000" class="form-control-color m-1 border-0 bg-white" />
             </div>
             <div class="col-2">
                 <select asp-for="@Model.Input.GlobalStatus" class="form-select m-1 w-100">

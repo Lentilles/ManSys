@@ -140,5 +140,15 @@ namespace ManSys.Controllers
 
             return RedirectToAction(nameof(ManageRoles));
         }
+
+
+        [HttpGet]
+        public ActionResult ManageUsers()
+        {
+            ManageUsersViewModel model = new ManageUsersViewModel();
+            model.Users = context.Users.ToList();
+
+            return View(model);
+        }
     }
 }

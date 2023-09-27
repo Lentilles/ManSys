@@ -1,19 +1,36 @@
 @model ManSys.ViewModels.Admin.ManageUsersViewModel
-
-
+@{
+    var isChecked = "";
 <div class="container">
-    <table>
-        <thead>
-            <td>
-
-            </td>
+    <table class="table">
+        <thead class="table-dark">
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Доступ</th>
+            <th>Почта</th>
+            <th>Контактный номер телефона</th>
         </thead>
         <tbody>
-        @for(int i = 0; i < Model.Users.Count; i++){
-            <td>
-
-            </td>
-        }
+            @for(int i = 0; i < Model.Users.Count; i++){
+                <tr>
+                    <td>@Model.Users[i].Surname</td>
+                    <td>@Model.Users[i].Name</td>
+                    <td>
+                        @if (@Model.Users[i].EmailConfirmed)
+                        {
+                            isChecked = "checked";
+                        }
+                        else
+                        {
+                            isChecked = "";
+                        }
+                        <input type="checkbox" @isChecked/>
+                    </td>
+                    <td>@Model.Users[i].Email</td>
+                    <td>@Model.Users[i].PhoneNumber</td>
+                </tr>
+            }
         </tbody>
     </table>
 </div>
+}
